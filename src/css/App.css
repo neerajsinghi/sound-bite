@@ -1,0 +1,61 @@
+.row-header{
+    margin:0px auto;
+    padding:0px auto;
+}
+
+.row-content {
+    margin:0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 0.5px ridge lightblue;
+    min-height:400px;
+}
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+.location{
+    background-color: #a9f8eb;
+    padding-left: 30px;
+    height: 50vh;
+    color:black;
+}
+dt{
+    color:black;
+
+}
+dd{
+    color:#B23850;
+
+}
+.map{
+    background-color: #B23850;
+    height: 50vh;
+}
+.contactus{
+    background-color: #083daf;
+    padding: 30px;
+    color:floralwhite;
+}
+.aboutus{
+    background-color: #083daf;
+    padding: 30px;
+    color:floralwhite;
+}
+
+.home{
+
+    background-color: #083daf;
+    color:floralwhite;
+
+}
+.home-content {
+    margin:0px auto;
+    padding: 0px 70px 0px 0px ;
+}
+.products{
+    background-color: #083daf;
+    padding: 30px;
+    color:floralwhite;
+
+}

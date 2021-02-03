@@ -1,0 +1,26 @@
+
+.active {
+    color: #B23850;
+    text-decoration: none;
+}
+ .inactive {
+    color: #3B8BEB;
+    text-decoration: none;
+}
+.navbar-toggler{
+    background-color: #3B8BEB;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(188,100,100, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+.custom-toggler.navbar-toggler { 
+    border-color: #3B8BEB;
+    background-color: floralwhite;
+} 
+.dropdown-menu{
+    width: 580px;
+    margin:0px auto;
+    padding: 10px 0px 10px 10px;
+    border-bottom: 0.5px ridge lightblue;
+    min-height:200px;
+}

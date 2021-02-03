@@ -1,0 +1,11 @@
+.footer{
+    background-color:  #e5eff3;
+    margin:0px auto;
+    padding: 20px 0px 0px 0px;
+    bottom: 0px;
+}
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
