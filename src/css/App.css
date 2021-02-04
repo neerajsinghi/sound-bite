@@ -33,19 +33,28 @@ dd{
     height: 50vh;
 }
 .contactus{
-    background-color: #083daf;
+    
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #000046, #1cb5e0); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000046, #1cb5e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 30px;
     color:floralwhite;
 }
 .aboutus{
-    background-color: #083daf;
+    
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #000046, #1cb5e0); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000046, #1cb5e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 30px;
     color:floralwhite;
 }
 
 .home{
 
-    background-color: #083daf;
+    
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #000046, #1cb5e0); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000046, #1cb5e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color:floralwhite;
 
 }
@@ -54,7 +63,10 @@ dd{
     padding: 0px 70px 0px 0px ;
 }
 .products{
-    background-color: #083daf;
+    
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #000046, #1cb5e0); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000046, #1cb5e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 30px;
     color:floralwhite;
 
