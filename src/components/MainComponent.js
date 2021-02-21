@@ -9,6 +9,7 @@ import About from './AboutComponent';
 import Contact from './ContactComponent';
 import LoudSpeaker from './LoudSpeakersComponent';
 import LoudSpeakerDetail from './LoudSpeakerDetailComponent';
+import { Container } from 'reactstrap';
 
 const mapStateToProps = state => {
     return {
@@ -51,14 +52,13 @@ class Main extends Component {
             );
         }
         const LoudSpeakersWithId = ({ match }) => {
-            console.log("jere");
             return (
                 <LoudSpeakerDetail loudSpeaker={this.props.loudSpeakers.filter((loudSpeaker) => loudSpeaker.id === parseInt(match.params.loudSpeakerId, 10))[0]}
                 />
             );
         };
         return (
-            <div>
+            <Container>
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
@@ -69,7 +69,7 @@ class Main extends Component {
                     <Redirect to="/home" />
                 </Switch>
                 <Footer />
-            </div>
+            </Container>
         );
     }
 }

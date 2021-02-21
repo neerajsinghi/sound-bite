@@ -1,19 +1,35 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import {
-    Card, CardImg, CardBody, CardHeader,
+    Card, CardBody, CardHeader,
     CardTitle, Breadcrumb, BreadcrumbItem
 } from 'reactstrap';
 
 import { Link } from 'react-router-dom';
+import ReactImageMagnify from 'react-image-magnify';
 
 
 function RenderLoudSpeaker({ loudSpeaker }) {
     if (loudSpeaker != null)
         return (
-            <Card >
-                <CardImg top src={loudSpeaker.image} alt={loudSpeaker.name} />
-            </Card>
+            <ReactImageMagnify style={{
+                zIndex: "9999"
+            }} {...{
+                smallImage: {
+                    alt: loudSpeaker.name,
+
+                    src: loudSpeaker.image,
+                    width: 400,
+                    height: 360
+                },
+                largeImage: {
+                    src: loudSpeaker.image,
+                    width: 1200,
+                    height: 1800
+                }
+            }
+                } />
+
         );
     else
         return (
@@ -23,14 +39,14 @@ function RenderLoudSpeaker({ loudSpeaker }) {
 function RenderDetail({ loudSpeaker }) {
 
     return (
-        <Card>
-            <CardHeader style={{ backgroundColor: '#B23850', borderBottom: "solid  5px black" }}>{loudSpeaker.name}</CardHeader>
-            <CardBody style={{ backgroundColor: '#083daf' }}>
-                <hr style={{ backgroundColor: "floralwhite", borderTop: "dashed 1px" }} />
-                <CardTitle>Description :</CardTitle>
-                <hr style={{ backgroundColor: "floralwhite" }} />
+        <Card className="m-1">
+            <CardHeader style={{ backgroundColor: '#B23850', borderBottom: "solid  5px black", fontFamily: "Oswald" }}>{loudSpeaker.name}</CardHeader>
+            <CardBody style={{ backgroundColor: "floralwhite", fontFamily: "Oswald" }}>
+                <hr style={{ backgroundColor: '#083daf', borderTop: "dashed 1px" }} />
+                <CardTitle style={{ color: '#083daf' }}>Description :</CardTitle>
+                <hr style={{ backgroundColor: '#083daf' }} />
                 <div className="row">
-                    <div className="col-12 col-sm-6">
+                    <div className="col-12 col-sm-6" style={{ color: '#083daf', fontFamily: "Oswald,sans-serif !important" }}>
 
                         Normal Diameter :<span style={{ color: '#B23850' }}> 18 inch</span><br></br>
                         DC Resistance : <span style={{ color: '#B23850' }}>5 ohm</span><br></br>
@@ -41,7 +57,7 @@ function RenderDetail({ loudSpeaker }) {
                         Basket : <span style={{ color: '#B23850' }}>Aluminium</span><br></br>
 
                     </div>
-                    <div className="col-12 col-sm-6">
+                    <div className="col-12 col-sm-6" style={{ color: '#083daf', fontFamily: "Oswald,sans-serif !important" }}>
                         Nominal Impedance : <span style={{ color: '#B23850' }}>8 ohm</span><br></br>
                         Nominal Power Handling : <span style={{ color: '#B23850' }}>1800W</span><br></br>
                         Sensitivity (1W/1m) : <span style={{ color: '#B23850' }}>96dB</span><br></br>
@@ -53,7 +69,7 @@ function RenderDetail({ loudSpeaker }) {
                     </div>
                 </div>
             </CardBody>
-        </Card>
+        </Card >
     );
 
 }
@@ -66,22 +82,23 @@ const LoudSpeakerDetail = (props) => {
                 <div className="row">
                     <Breadcrumb>
 
-                        <BreadcrumbItem><Link to="/loudspeaker">Loudspeaker</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>{props.loudSpeaker.name}</BreadcrumbItem>
+                        <BreadcrumbItem style={{ fontFamily: "Oswald,sans-serif !important" }}><Link to="/loudspeaker">Loudspeaker</Link></BreadcrumbItem>
+                        <BreadcrumbItem style={{ fontFamily: "Oswald,sans-serif !important" }} active>{props.loudSpeaker.name}</BreadcrumbItem>
                     </Breadcrumb>
 
                 </div>
-                <div className="container">
-                    <div className="row  row-content">
-                        <div className="col-12 col-md-4">
-                            <RenderLoudSpeaker loudSpeaker={props.loudSpeaker} />
-                        </div>
-                        <div className="col-12 col-md-8">
-                            <RenderDetail loudSpeaker={props.loudSpeaker}
-                            />
-                        </div>
+                <div className="row  row-content justify-content-center">
+
+
+                    <RenderLoudSpeaker className="col-12 col-md-4 m-s-1" loudSpeaker={props.loudSpeaker} />
+                    <div body className="col-12 col-md-6 m-s-1">
+                        <RenderDetail loudSpeaker={props.loudSpeaker} />
+
                     </div>
+
+
                 </div>
+
             </div>
         );
     else return (

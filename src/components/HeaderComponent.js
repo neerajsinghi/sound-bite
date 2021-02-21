@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem
+    Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, DropdownToggle, DropdownMenu, Dropdown
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import '../css/Header.css';
@@ -12,18 +12,45 @@ class Header extends Component {
         this.toggleNav = this.toggleNav.bind(this);
         this.state = {
             isNavOpen: false,
-            isModalOpen: false
+            isDropDownOpen: false
         };
-        this.toggleModal = this.toggleModal.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
-
+        this.toggleDropDown = this.toggleDropDown.bind(this);
+        this.closeDropDown = this.closeDropDown.bind(this);
 
     }
 
     toggleNav() {
+        if (window.innerWidth <= 800) {
+            this.setState({
+                isNavOpen: !this.state.isNavOpen
+            });
+        }
+    }
+    toggleDropDown() {
+        console.log(this.state.isDropDownOpen);
+
+
+
         this.setState({
-            isNavOpen: !this.state.isNavOpen
+            isDropDownOpen: !this.state.isDropDownOpen,
         });
+
+
+    }
+    closeDropDown() {
+        console.log(window.innerWidth);
+        if (window.innerWidth > 800) {
+            this.setState({
+                isDropDownOpen: false,
+            });
+        } else {
+            this.setState({
+                isDropDownOpen: false,
+                isNavOpen: false
+
+            });
+        }
     }
     toggleModal() {
         this.setState({
@@ -39,64 +66,82 @@ class Header extends Component {
     }
     render() {
         return (
-            <div>
-                <Navbar sticky expand="md">
-                    <div className="container">
-                        <NavbarToggler className="navbar-toggler custom-toggler" onClick={this.toggleNav} />
-                        <NavbarBrand href="/"><img src='assets/images/logo.png' width='203' alt='SoundBite' /></NavbarBrand>
+            <div className="sticky-nav">
+                <Navbar sticky="top" color="white" className="sticky-nav  mr-auto border-bottom border-dark" expand="lg">
+                    <NavbarBrand className="ml-auto mr-auto" href="/"><img className="brand" src='assets/images/logo.png' alt='SoundBite' /></NavbarBrand>
+                </Navbar >
+                <Navbar color="white" className="mr-auto border-bottom border-dark" expand="lg">
+                    <Nav className="need-hel-link  nav-menu" navbar>
 
-                        <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav className="ml-auto" navbar>
-                                <NavItem>
-                                    <NavLink className="nav-link" activeClassName="active" to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" activeClassName="active" to='/aboutus'><span className="fa fa-info fa-lg"></span> About Us</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <UncontrolledDropdown nav inNavbar>
-                                        <DropdownToggle nav caret>
-                                            <span className="fa fa-list fa-lg"></span> Products
-                                        </DropdownToggle>
-                                        <DropdownMenu className="menu">
-                                            <div className="container menu">
-                                                <div className="row ">
-                                                    <div className="col-12 col-md-4 ">
-                                                        <NavLink className="nav-link" activeClassName="active" to='/loudspeaker'>Loudspeakers</NavLink>
+                        <a navbar href="tel:01149868550" className="need-hel-link" target="_blank" rel="noreferrer">
+                            <h5 className="need-help">Need Help <i className="fa fa-phone fa-lg " style={{ color: 'blue' }}></i> Call 011-4986 8550</h5>
+                        </a>
+                    </Nav>
+                    <NavbarToggler className="  navbar-toggler custom-toggler" onClick={this.toggleNav} />
+                    <Collapse isOpen={this.state.isNavOpen} navbar>
+                        <Nav className="ml-auto mr-auto  nav-menu" navbar>
+                            <NavItem>
+                                <NavLink className="nav-link header-link" activeClassName="active" to='/home' onClick={this.toggleNav} > HOME</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className=" nav-link header-link" activeClassName="active" to='/aboutus' onClick={this.toggleNav} > ABOUT</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <Dropdown nav inNavbar activeClassName="active" isOpen={this.state.isDropDownOpen} toggle={this.toggleDropDown}>
+                                    <DropdownToggle nav caret className=" nav-link header-link"  >
+                                        PRODUCTS
+                                </DropdownToggle>
+                                    <DropdownMenu
+                                        modifiers={{
 
-                                                        <NavLink className="nav-link" activeClassName="active" to='/mixer'>Mixers</NavLink>
-                                                        <NavLink className="nav-link" activeClassName="active" to='/crossovernetworks'>Crossover Networks</NavLink>
-                                                        <NavLink className="nav-link" activeClassName="active" to='/paamplifiers'>P.A Amplifiers</NavLink>
-                                                    </div>
-                                                    <div className="col-12 col-md-4 ">
-                                                        <NavLink className="nav-link" activeClassName="active" to='/loudspeakersystem'>Loudspeaker System</NavLink>
-                                                        <NavLink className="nav-link" activeClassName="active" to='/amplifiers'>Amplifiers</NavLink>
-                                                        <NavLink className="nav-link" activeClassName="active" to='/wallmountspeakers'>Wallmount Speakers</NavLink>
-
-                                                    </div>
-                                                    <div className="col-12 col-md-4 ">
-                                                        <NavLink className="nav-link" activeClassName="active" to='/microphones'>Microphones</NavLink>
-                                                        <NavLink className="nav-link" activeClassName="active" to='/compressiondrivers'>Compression Drivers</NavLink>
-                                                        <NavLink className="nav-link" activeClassName="active" to='/activecrossover'>Active Crossover</NavLink>
-                                                    </div>
-
-                                                </div>
+                                            setMaxWidth: {
+                                                enabled: true,
+                                                order: 890,
+                                                fn: (data) => {
+                                                    return {
+                                                        ...data,
+                                                        styles: {
+                                                            ...data.styles,
+                                                            overflow: 'auto',
+                                                            maxWidth: '100px',
+                                                        },
+                                                    };
+                                                },
+                                            },
+                                        }}
+                                    >
+                                        <div className="row ">
+                                            <div className="col-12 col-md-4 ">
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/loudspeaker' onClick={this.closeDropDown}>Loudspeakers</NavLink>
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/loudSpeakerSystem' onClick={this.closeDropDown}>LoudSpeaker System</NavLink>
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/microphones' onClick={this.closeDropDown}>Microphones</NavLink>
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/audioCables' onClick={this.closeDropDown}>Audio Cables</NavLink>
                                             </div>
-                                        </DropdownMenu>
+                                            <div className="col-12 col-md-4 ">
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/powerAmplifiers' onClick={this.closeDropDown}>Power Amplifiers</NavLink>
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/crossoverNetwork' onClick={this.closeDropDown}>Crossover Network</NavLink>
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/crossoverDriver' onClick={this.closeDropDown}>Crossover Driver</NavLink>
 
-                                    </UncontrolledDropdown>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" activeClassName="active" to='/contactus'><span className="fa fa-address-card fa-lg"></span> Contact Us</NavLink>
-                                </NavItem>
+                                            </div>
+                                            <div className="col-12 col-md-4 ">
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/snakeCables' onClick={this.closeDropDown}>Snake Cable</NavLink>
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/digitalCableM' onClick={this.closeDropDown}>Digital Cable (Microphones)</NavLink>
+                                                <NavLink className="nav-link header-link" activeClassName="active" to='/digitalCableSL' onClick={this.closeDropDown}>Digital Cable (Speaker Light)</NavLink>
+                                            </div>
+                                        </div>
+                                    </DropdownMenu>
+                                </Dropdown>
 
-                            </Nav>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link header-link" activeClassName="active" to='/contactus' onClick={this.toggleNav}>CONTACT</NavLink>
+                            </NavItem>
 
-                        </Collapse>
+                        </Nav>
 
-                    </div>
+                    </Collapse>
+
                 </Navbar>
-
             </div >
         );
     }

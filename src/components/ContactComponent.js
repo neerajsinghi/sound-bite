@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import {
     Breadcrumb, BreadcrumbItem,
-    Button, Row, Col, Label
+    Button, Row, Col, Label, Card, CardBody, CardTitle
 } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Link } from 'react-router-dom';
@@ -21,10 +21,26 @@ const defaultVals = {
         lat: 28.658152,
         lng: 77.234757
     },
-    zoom: 15
+    zoom: 17
 };
-const AnyReactComponent = ({ text }) => <div><span style={{ color: "red" }} className="fa fa-home fa-lg"></span>{text}</div>;
+const InfoWindow = props => (
+    (<div style={{ width: 60, height: 15, backgroundColor: 'blue' }}>{props.show}</div>))
 
+const AnyReactComponent = props => (
+    <React.Fragment>
+        <div
+            style={{
+                border: "5px solid red",
+                borderRadius: 20,
+                height: 20,
+                width: 20
+            }}
+        />
+        <InfoWindow
+            show={props.text}
+        />
+    </React.Fragment>
+)
 
 class Contact extends Component {
     constructor(props) {
@@ -42,48 +58,65 @@ class Contact extends Component {
     }
 
     render() {
-
+        const showInMapClicked = () => {
+            window.open("https://maps.google.com?q=28.658152,77.234757");
+        };
         return (
             <div className=" contactus">
                 <div className="row">
                     <Breadcrumb>
-                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>Contact Us</BreadcrumbItem>
+                        <BreadcrumbItem style={{ fontFamily: "Oswald,sans-serif !important" }}><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem style={{ fontFamily: "Oswald,sans-serif !important" }} active>Contact Us</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
-                        <h3>Contact Us</h3>
-                        <hr />
+                        <h3 className='page-title'>CONTACTS</h3>
+                    </div>
+                </div>
+                <div className="row  ">
+                    <div className="col-12  col-md-3 offset-md-1 mb-1">
+                        <Card style={{ backgroundColor: '#2088e3' }}>
+                            <CardBody className='home-product-text'>
+                                <CardTitle>
+                                    <i className="fa fa-envelope fa-lg"></i>:
+                            </CardTitle>
+                                <a href="mailto:purchase.shreeventures@gmail.com" style={{ color: 'white' }}>
+                                    purchase.shreeventures@gmail.com</a>
+                            </CardBody>
+                        </Card>
+                    </div>
+                    <div className="col-12  col-md-3 mb-1">
+                        <Card style={{ backgroundColor: '#2088e3' }}>
+                            <CardBody className='home-product-text'>
+                                <CardTitle>
+                                    <i className="fa fa-map fa-lg"></i>:
+                            </CardTitle>
+
+                            1693/33, Seth Faqir Chand Market,<br />
+                            Bhagirath Place, Delhi-110006<br />
+		                    India<br />
+
+                            </CardBody>
+                        </Card>
+                    </div>
+                    <div className="col-12  col-md-3 mb-1">
+                        <Card style={{ backgroundColor: '#2088e3' }}>
+                            <CardBody className='home-product-text'>
+                                <CardTitle>
+                                    <i className="fa fa-phone fa-lg"></i>:
+                            </CardTitle>
+                             011-4986 8550<br />
+
+                            </CardBody>
+                        </Card>
                     </div>
                 </div>
                 <div className="row row-content ">
-                    <div className="col-12  col-md-6  location">
-                        <div className=" offset-sm-1">
-                            <h3>Location Information</h3>
-                            <div className=" offset-sm-2">
-                                <h5>Our Address</h5>
-                                <address>
-                                    1693/33, Seth Faqir Chand Market,<br />
-                            Bhagirath Place, Delhi-110006<br />
-		                    India<br />
-                                    <i className="fa fa-phone fa-lg"></i>: 011-4986 8550<br />
-                                    <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:purchase.shreeventures@gmail.com">
-                                        purchase.shreeventures@gmail.com</a>
-                                </address>
-                                <div className="col-12  offset-sm-1">
-                                    <div className="btn-group" role="group">
-                                        <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
-                                        <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
-                                        <a role="button" className="btn btn-success" href="mailto:confusion@food.net"><i className="fa fa-envelope-o"></i> Email</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 map">
-                        <GoogleMapReact
+                    <div className="col-12  map">
+                        <GoogleMapReact onClick={showInMapClicked}
                             bootstrapURLKeys={{ key: 'AIzaSyCdyJ_4xgCulRCQ0t_tU24WQg1QQDUgsGo' }}
                             defaultCenter={defaultVals.center}
                             defaultZoom={defaultVals.zoom}
+                            info
                         >
                             <AnyReactComponent
                                 lat={28.658152}
@@ -97,9 +130,9 @@ class Contact extends Component {
                 </div>
                 <div className="row row-content">
                     <div className="col-12">
-                        <h3>Send us your Feedback</h3>
+                        <h3 className='page-title'>Any Enquiry</h3>
                     </div>
-                    <div className="col-12 col-md-9">
+                    <div className="col-12 col-md-9 content-text">
                         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                             <Row className="form-group">
                                 <Label htmlFor="firstname" md={2}>First Name</Label>
@@ -189,7 +222,7 @@ class Contact extends Component {
                                     />
                                 </Col>
                             </Row>
-                            <Row className="form-group">
+                            <Row className="form-group ">
                                 <Col md={{ size: 6, offset: 2 }}>
                                     <div className="form-check">
                                         <Label check>
@@ -226,7 +259,7 @@ class Contact extends Component {
                         </LocalForm>
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 }
