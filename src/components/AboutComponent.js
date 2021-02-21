@@ -12,8 +12,8 @@ function About(props) {
         <div className="aboutus">
             <div className="row">
                 <Breadcrumb>
-                    <BreadcrumbItem style={{ font: "Oswald,sans-serif !important" }}><Link to="/home">Home</Link></BreadcrumbItem>
-                    <BreadcrumbItem style={{ font: "Oswald,sans-serif !important" }} active>About Us</BreadcrumbItem>
+                    <BreadcrumbItem style={{ fontFamily: "Oswald,sans-serif !important" }}><Link to="/home">Home</Link></BreadcrumbItem>
+                    <BreadcrumbItem style={{ fontFamily: "Oswald,sans-serif !important" }} active>About Us</BreadcrumbItem>
                 </Breadcrumb>
                 <div className="col-12">
                     <h3 className='page-title'>ABOUT</h3>
