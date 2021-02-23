@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg } from 'reactstrap';
+import { Card, CardBody, CardImg } from 'reactstrap';
 import CustomCarousal from './CarouselComponent';
 import { Link } from 'react-router-dom';
 
@@ -30,12 +30,12 @@ const Home = () => {
                         <div className="col-6 col-md-3 mb-5">
                             <Link to={`/loudspeaker`} >
 
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
+                                <Card alignItems="center" borderRadius={500} style={{ alignItems: 'center' }}>
                                     <CardImg width="100%" src={"assets/images/LOUDSPEAKERS.jpg"
                                     } alt={"LoudSpeaker"} />
-
+                                    <CardBody>                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>LoudSpeaker</h3>
+                                    </CardBody>
                                 </Card >
-                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>LoudSpeaker</h3>
                             </Link>
                         </div>
                         <div className="col-6 col-md-3 mb-5">
@@ -44,9 +44,9 @@ const Home = () => {
                                 <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
                                     <CardImg width="100%" src={"assets/images/LOUDSPEAKER SYSTEMS.jpg"
                                     } alt={"LOUDSPEAKER SYSTEMS"} />
-
+                                    <CardBody>                                <h3 className='home-product-text' style={{ color: 'white', alignItems: 'center', padding: 10 }}>LoudSpeaker System</h3>
+                                    </CardBody>
                                 </Card >
-                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>LoudSpeaker System</h3>
 
                             </Link>
                         </div>

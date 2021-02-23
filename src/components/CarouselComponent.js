@@ -3,11 +3,12 @@ import {
     Carousel,
     CarouselItem,
     CarouselIndicators,
+    CarouselControl,
 } from 'reactstrap';
 
 const items = [
     {
-        src: 'assets/images/banner2.png',
+        src: 'assets/images/POWER AMPLIFIERs.jpg',
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
@@ -51,7 +52,7 @@ const CustomCarousal = (props) => {
                 onExited={() => setAnimating(false)}
                 key={item.src}
             >
-                <img src={item.src} alt={item.altText} style={{ width: "100%" }} />
+                <img src={item.src} alt={item.altText} style={{}} />
             </CarouselItem>
         );
     });
@@ -63,8 +64,9 @@ const CustomCarousal = (props) => {
             previous={previous}
 
         >
-            <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
             {slides}
+            <CarouselControl color={"blue"} direction="prev" directionText="Previous" onClickHandler={previous} />
+            <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
         </Carousel>
     );
 }
