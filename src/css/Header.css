@@ -44,6 +44,10 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+	.dropdown-menu{
+  
+		width: 600px;
+	}
 }
 
 .nav-link-button {
@@ -53,9 +57,8 @@
 	font-weight: bold !important;
 }
 .header-link {
-	margin-left: 20px !important;
-	font: 17px "Oswald", sans-serif;
-	font-weight: bold;
+	margin-left: 60px !important;
+	font: 16px "Oswald", sans-serif;
 }
 .sticky-nav {
 	position: sticky !important;
@@ -83,4 +86,15 @@
 		font-size: small;
 		margin-left: 0px;
 	}
+	.dropdown-menu{
+  
+		width: 300px;
+	}
 }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+	display: block !important;
+  }
+ 
+  

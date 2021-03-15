@@ -1,5 +1,4 @@
 .breadcrumb {
-	background-color: #ffe6e6 !important;
 	width: 100%;
 }
 .row-header {
@@ -46,10 +45,14 @@ dd {
 .contactus {
 	padding: 30px;
 	color: floralwhite;
+	background-color: #e9e8ed;
+
 }
 .aboutus {
 	padding: 30px;
 	color: floralwhite;
+	background-color: #e9e8ed;
+
 }
 
 .home {
@@ -72,26 +75,33 @@ dd {
 .products {
 	padding: 30px;
 	color: floralwhite;
+	background-color: #e9e8ed;
+
+}
+.carousel{
+	z-index: 0;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
 	height: 0px;
 	width: 0px;
 	background-size: 0%, 0%;
-	border-radius: 50%;
+	border-radius: 20%;
 	background-image: none !important;
 }
 
 .carousel-control-next-icon:after {
 	content: ">";
 	font-size: 55px;
-	color: red;
+	color: blue;
 }
 
 .carousel-control-prev-icon:after {
+	position: relative;
+
 	content: "<";
 	font-size: 55px;
-	color: red;
+	color: blue;
 }
 .fluid {
 	max-width: 1200px;
@@ -135,3 +145,31 @@ dd {
 		display: none;
 	}
 }
+
+.zoom {
+	background-color: green;
+	transition: transform .2s; /* Animation */
+	margin: 0 auto;
+  }
+  
+  .zoom:hover {
+	transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  .home-card{
+	border-radius:15px 50px;
+
+  }
+  .card-products{
+	background-color: #2088e3 !important;
+	align-items: center; 
+	border-radius: 15px 50px 0px 5px !important;
+  }
+  .card-img-products{
+	border-radius:15px 50px !important; 
+	object-fit: contain;
+	width:100% !important; 
+	height:25vh !important; 
+	background-color: 
+	white !important;
+  }
+  

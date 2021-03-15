@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import {
     Carousel,
     CarouselItem,
-    CarouselIndicators,
     CarouselControl,
 } from 'reactstrap';
 
 const items = [
     {
         src: 'assets/images/POWER AMPLIFIERs.jpg',
+
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
@@ -40,10 +40,6 @@ const CustomCarousal = (props) => {
         setActiveIndex(nextIndex);
     }
 
-    const goToIndex = (newIndex) => {
-        if (animating) return;
-        setActiveIndex(newIndex);
-    }
 
     const slides = items.map((item) => {
         return (
@@ -52,7 +48,7 @@ const CustomCarousal = (props) => {
                 onExited={() => setAnimating(false)}
                 key={item.src}
             >
-                <img src={item.src} alt={item.altText} style={{}} />
+                <img src={item.src} alt={item.altText} style={{ objectFit: "contain", width: '100%', height: '70vh', backgroundColor: 'white' }} />
             </CarouselItem>
         );
     });

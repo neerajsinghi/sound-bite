@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-    Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, DropdownToggle, DropdownMenu, Dropdown
+    Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledDropdown
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import '../css/Header.css';
@@ -87,50 +87,49 @@ class Header extends Component {
                                 <NavLink className=" nav-link header-link" activeClassName="active" to='/aboutus' onClick={this.toggleNav} > ABOUT</NavLink>
                             </NavItem>
                             <NavItem>
-                                <Dropdown nav inNavbar activeClassName="active" isOpen={this.state.isDropDownOpen} toggle={this.toggleDropDown}>
+                                <UncontrolledDropdown direction="center" nav inNavbar >
                                     <DropdownToggle nav caret className=" nav-link header-link"  >
                                         PRODUCTS
                                 </DropdownToggle>
-                                    <DropdownMenu
-                                        modifiers={{
-
-                                            setMaxWidth: {
-                                                enabled: true,
-                                                order: 890,
-                                                fn: (data) => {
-                                                    return {
-                                                        ...data,
-                                                        styles: {
-                                                            ...data.styles,
-                                                            overflow: 'auto',
-                                                            maxWidth: '100px',
-                                                        },
-                                                    };
-                                                },
-                                            },
-                                        }}
+                                    <DropdownMenu center
                                     >
-                                        <div className="row ">
-                                            <div className="col-12 col-md-4 ">
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/loudspeaker' onClick={this.closeDropDown}>Loudspeakers</NavLink>
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/loudSpeakerSystem' onClick={this.closeDropDown}>LoudSpeaker System</NavLink>
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/microphones' onClick={this.closeDropDown}>Microphones</NavLink>
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/audioCables' onClick={this.closeDropDown}>Audio Cables</NavLink>
+                                        <div className="row">
+                                            <div className="col-12 col-md-4">
+                                                <DropdownItem>
+                                                    <NavLink className="nav-link header-link-dropdown" activeClassName="active" to='/loudspeaker' onClick={this.closeDropDown}>Loudspeakers</NavLink>
+                                                </DropdownItem>
+                                                <DropdownItem>
+                                                    <NavLink className="nav-link header-link-dropdown" activeClassName="active" to='/loudSpeakerSystem' onClick={this.closeDropDown}>LoudSpeaker System</NavLink>
+                                                </DropdownItem>
+                                                <DropdownItem>
+                                                    <NavLink className="nav-link header-link-dropdown" activeClassName="active" to='/microphone' onClick={this.closeDropDown}>Microphones</NavLink>
+                                                </DropdownItem>
                                             </div>
-                                            <div className="col-12 col-md-4 ">
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/powerAmplifiers' onClick={this.closeDropDown}>Power Amplifiers</NavLink>
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/crossoverNetwork' onClick={this.closeDropDown}>Crossover Network</NavLink>
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/crossoverDriver' onClick={this.closeDropDown}>Crossover Driver</NavLink>
-
+                                            <div className="col-12 col-md-4">
+                                                <DropdownItem>
+                                                    <NavLink className="nav-link header-link-dropdown" activeClassName="active" to='/audioCable' onClick={this.closeDropDown}>Audio Cables</NavLink>
+                                                </DropdownItem>
+                                                <DropdownItem>
+                                                    <NavLink className="nav-link header-link-dropdown" activeClassName="active" to='/snakeCable' onClick={this.closeDropDown}>Snake Cable</NavLink>
+                                                </DropdownItem>
+                                                <DropdownItem>
+                                                    <NavLink className="nav-link header-link-dropdown" activeClassName="active" to='/powerAmplifier' onClick={this.closeDropDown}>Power Amplifiers</NavLink>
+                                                </DropdownItem>
                                             </div>
-                                            <div className="col-12 col-md-4 ">
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/snakeCables' onClick={this.closeDropDown}>Snake Cable</NavLink>
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/digitalCableM' onClick={this.closeDropDown}>Digital Cable (Microphones)</NavLink>
-                                                <NavLink className="nav-link header-link" activeClassName="active" to='/digitalCableSL' onClick={this.closeDropDown}>Digital Cable (Speaker Light)</NavLink>
+                                            <div className="col-12 col-md-4">
+                                                <DropdownItem>
+                                                    <NavLink className="nav-link header-link-dropdown" activeClassName="active" to='/crossoverNetwork' onClick={this.closeDropDown}>Crossover Network</NavLink>
+                                                </DropdownItem>
+                                                <DropdownItem>
+                                                    <NavLink className="nav-link header-link-dropdown" activeClassName="active" to='/compressionDriver' onClick={this.closeDropDown}>Compression Driver</NavLink>
+                                                </DropdownItem>
+                                                <DropdownItem>
+                                                    <NavLink className="nav-link header-link-dropdown" activeClassName="active" to='/connector' onClick={this.closeDropDown}>Connectors</NavLink>
+                                                </DropdownItem>
                                             </div>
                                         </div>
                                     </DropdownMenu>
-                                </Dropdown>
+                                </UncontrolledDropdown>
 
                             </NavItem>
                             <NavItem>
@@ -141,7 +140,7 @@ class Header extends Component {
 
                     </Collapse>
 
-                </Navbar>
+                </Navbar >
             </div >
         );
     }

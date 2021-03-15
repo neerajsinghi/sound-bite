@@ -2,9 +2,6 @@ import React from 'react';
 import { Card, CardBody, CardImg } from 'reactstrap';
 import CustomCarousal from './CarouselComponent';
 import { Link } from 'react-router-dom';
-
-
-
 const Home = () => {
 
     return (
@@ -27,144 +24,121 @@ const Home = () => {
 
                     <div className="row">
 
-                        <div className="col-6 col-md-3 mb-5">
+                        <div className="col-12 col-md-3 mb-5">
+
                             <Link to={`/loudspeaker`} >
 
-                                <Card alignItems="center" borderRadius={500} style={{ alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/LOUDSPEAKERS.jpg"
+                                <Card className="zoom card-products" alignItems="center" >
+                                    <CardImg className="card-img-products" src={"assets/images/LOUDSPEAKERS.jpg"
                                     } alt={"LoudSpeaker"} />
-                                    <CardBody>                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>LoudSpeaker</h3>
+                                    <CardBody >
+                                        <h3 className='home-product-text' >LoudSpeaker</h3>
                                     </CardBody>
                                 </Card >
                             </Link>
                         </div>
-                        <div className="col-6 col-md-3 mb-5">
-                            <Link to={`/louudSpeakerSystem`} >
-
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/LOUDSPEAKER SYSTEMS.jpg"
+                        <div className="col-12 col-md-3 mb-5">
+                            <Link to={`/loudSpeakerSystem`} >
+                                <Card className="zoom card-products" alignItems="center" >
+                                    <CardImg className="card-img-products" src={"assets/images/LOUDSPEAKER SYSTEMS.jpg"
                                     } alt={"LOUDSPEAKER SYSTEMS"} />
-                                    <CardBody>                                <h3 className='home-product-text' style={{ color: 'white', alignItems: 'center', padding: 10 }}>LoudSpeaker System</h3>
+                                    <CardBody >
+                                        <h3 className='home-product-text' >LoudSpeaker System</h3>
                                     </CardBody>
-                                </Card >
-
+                                </Card>
                             </Link>
                         </div>
-                        <div className="col-6 col-md-3 mb-5">
+                        <div className="col-12 col-md-3 mb-5">
                             <Link to={`/microphones`} >
 
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/MICROPHONES.jpg"
+                                <Card className="zoom card-products" alignItems="center" >
+                                    <CardImg className="card-img-products" src={"assets/images/MICROPHONES.jpg"
                                     } alt={"MICROPHONES"} />
-
-
-                                </Card >
-                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>Microphones</h3>
-
-                            </Link>
-                        </div>
-                        <div className="col-6 col-md-3 mb-5">
-                            <Link to={`/audioCables`} >
-
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/AUDIO CABLES.jpg"
-                                    } alt={"AUDIO CABLES"} />
-
-
-                                </Card >
-                            </Link>
-                            <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>Audio Cables</h3>
-
-                        </div>
-                        <div className="col-6 col-md-3 mb-5">
-                            <Link to={`/powerAmplifiers`} >
-
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/POWER AMPLIFIERs.jpg"
-                                    } alt={"POWER AMPLIFIERs"} />
-                                    {/*<CardBody >
-                                        <CardTitle bottom alignItems="center" tag="b1"
-                                            className='home-product-text'
-                                        >Power Amplifiers</CardTitle>
+                                    <CardBody >
+                                        <h3 className='home-product-text' >Microphones</h3>
                                     </CardBody>
-                                    */}
-                                </Card >
-                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>Power Amplifiers</h3>
 
+                                </Card >
                             </Link>
                         </div>
-                        <div className="col-6 col-md-3 mb-5">
+                        <div className="col-12 col-md-3 mb-5">
+                            <Link to={`/audioCable`} >
+
+                                <Card className="zoom card-products" alignItems="center" >
+                                    <CardImg className="card-img-products" src={"assets/images/AUDIO CABLES.jpg"
+                                    } alt={"AUDIO CABLES"} />
+                                    <CardBody >
+                                        <h3 className='home-product-text' >Audio Cables</h3>
+                                    </CardBody>
+
+
+                                </Card >
+                            </Link>
+                        </div>
+                        <div className="col-12 col-md-3 mb-5">
+                            <Link to={`/powerAmplifier`} >
+
+                                <Card className="zoom card-products" alignItems="center" >
+                                    <CardImg className="card-img-products" src={"assets/images/POWER AMPLIFIERs.jpg"
+                                    } alt={"POWER AMPLIFIERs"} />
+                                    <CardBody >
+                                        <h3 className='home-product-text' >Power Amplifiers</h3>
+                                    </CardBody>
+                                </Card >
+                            </Link>
+                        </div>
+                        <div className="col-12 col-md-3 mb-5">
                             <Link to={`/crossoverNetwork`} >
 
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/CROSSOVER NETWORKs.jpg"
+                                <Card className="zoom card-products" alignItems="center" >
+                                    <CardImg className="card-img-products" src={"assets/images/CROSSOVER NETWORKs.jpg"
                                     } alt={"CROSSOVER NETWORKs"} />
-                                    {/* <CardBody >
-                                        <CardTitle bottom alignItems="center" tag="b1" className='home-product-text'>CrossOver Networks</CardTitle>
+                                    <CardBody >
+                                        <h3 className='home-product-text' >
+                                            CrossOver Networks</h3>
                                     </CardBody>
-*/}
+
                                 </Card >
-                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>CrossOver Networks</h3>
 
                             </Link>
                         </div>
-                        <div className="col-6 col-md-3 mb-5">
-                            <Link to={`/crossoverDriver`} >
+                        <div className="col-12 col-md-3 mb-5">
+                            <Link to={`/compressionDriver`} >
 
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/CROSSOVER DRIVERS.jpg"
-                                    } alt={"CROSSOVER DRIVERS"} />
-                                    {/* <CardBody >
-                                        <CardTitle bottom alignItems="center" tag="b1" className='home-product-text'>CrossOver Drivers</CardTitle>
+                                <Card className="zoom card-products" alignItems="center" >
+                                    <CardImg className="card-img-products" src={"assets/images/CROSSOVER DRIVERS.jpg"
+                                    } alt={"COMPRESSION DRIVERS"} />
+                                    <CardBody >
+                                        <h3 className='home-product-text' >Compression Drivers</h3>
                                     </CardBody>
-                                */}
                                 </Card >
-                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>CrossOver Drivers</h3>
-
                             </Link>
                         </div>
-                        <div className="col-6 col-md-3 mb-5">
-                            <Link to={`/snakeCables`} >
+                        <div className="col-12 col-md-3 mb-5">
+                            <Link to={`/snakeCable`} >
 
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/SNAKE CABLES.jpg"
+                                <Card className="zoom card-products" alignItems="center" >
+                                    <CardImg className="card-img-products" src={"assets/images/SNAKE CABLES.jpg"
                                     } alt={"SNAKE CABLES"} />
-                                    {/*     <CardBody >
-                                        <CardTitle bottom alignItems="center" tag="b1" className='home-product-text'>Snake Cables</CardTitle>
+                                    <CardBody >
+                                        <h3 className='home-product-text' >Snake Cables</h3>
+
                                     </CardBody>
-*/}
                                 </Card >
-                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>Snake Cables</h3>
 
                             </Link>
                         </div>
-                        <div className="col-6 col-md-3 mb-5">
-                            <Link to={`/digitalCableM`} >
+                        <div className="col-12 col-md-3 mb-5">
+                            <Link to={`/connectors`} >
 
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/DIGITAL CABLES MICROPHONES.jpg"
-                                    } alt={"DIGITAL CABLES MICROPHONES"} />
-                                    {/*<CardBody >
-                                        <CardTitle bottom alignItems="center" tag="b1" className='home-product-text'>Digital Cable (Microphones)</CardTitle>
-                                    </CardBody>*/}
+                                <Card className="zoom card-products" alignItems="center" >
+                                    <CardImg className="card-img-products" src={"assets/images/CONNECTORS.jpg"
+                                    } alt={"Connectors"} />
+                                    <CardBody >
+                                        <h3 className='home-product-text' >Connectors</h3>
 
+                                    </CardBody>
                                 </Card >
-                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>Digital Cable (Microphones)</h3>
-
-                            </Link>
-                        </div>
-                        <div className="col-6 col-md-3 mb-5">
-                            <Link to={`/digitalCableSL`} >
-
-                                <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                                    <CardImg width="100%" src={"assets/images/DIGITAL CABLES SPEAKERLIGHT.jpg"
-                                    } alt={"DIGITAL CABLES SPEAKERLIGHT"} />
-                                    {/* <CardBody >
-                                        <CardTitle bottom alignItems="center" tag="b1" className='home-product-text'>Digital Cable (Speaker Light)</CardTitle>
-                                    </CardBody>*/}
-
-                                </Card >
-                                <h3 className='home-product-text' style={{ color: '#2088e3', alignItems: 'center', padding: 10 }}>Digital Cable (Speaker Light)</h3>
 
                             </Link>
                         </div>

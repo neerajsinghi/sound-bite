@@ -1,10 +1,10 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { ConfigureState } from './redux/configureStore.js';
+import { ConfigureStore } from './redux/configureStore.js';
 import Main from './components/MainComponent.js';
 import './css/App.css';
 
-const store = ConfigureState();
+const store = ConfigureStore();
 
 
 function App() {

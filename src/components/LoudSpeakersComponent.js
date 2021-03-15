@@ -1,12 +1,13 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardTitle, CardBody, CardImg } from 'reactstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { SideNav } from './SideNavigationComponent';
 
 function RenderLoudSpeaker({ item }) {
     return (
         <Link to={`/loudspeaker/${item.id}`} >
-            <Card alignItems="center" style={{ backgroundColor: '#2088e3', alignItems: 'center' }}>
-                <CardImg width="100%" src={item.image} alt={item.name} />
+            <Card alignItems="center" className="zoom card-products">
+                <CardImg className="card-img-products" src={`/assets/images/${item.image}`} alt={item.name} />
                 <CardBody>
                     <CardTitle bottom alignItems="center" tag="b1" className='home-product-text'>{item.name}</CardTitle>
                 </CardBody>
@@ -19,7 +20,7 @@ function RenderLoudSpeaker({ item }) {
 
 const LoudSpeaker = (props) => {
     const featuredItemsMap = props.featuredItems.map((item) => {
-        return (<div key={item.id} className="col-6 col-md-3 mb-3">
+        return (<div key={item.id} className="col-6 col-md-4 mb-3">
             <RenderLoudSpeaker item={item} />
         </div>);
     });
@@ -36,24 +37,8 @@ const LoudSpeaker = (props) => {
                 </div>
             </div>
             <div className="row  row-content content-text">
-                <div className="col-12 col-md-3 side-links">
-                    <Card>
-                        <CardBody >
-                            <CardTitle className="header-link" style={{ fontFamily: "Oswald,sans-serif", fontWeight: "bold" }}>CATEGORY</CardTitle>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/loudspeaker'> Loudspeakers</NavLink>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/loudSpeakerSystem'> LoudSpeaker System</NavLink>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/microphones'> Microphones</NavLink>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/audioCables'> Audio Cables</NavLink>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/powerAmplifiers'> Power Amplifiers</NavLink>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/crossoverNetwork'> Crossover Network</NavLink>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/crossoverDriver'> Crossover Driver</NavLink>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/snakeCables'> Snake Cable</NavLink>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/digitalCableM'> Digital Cable (Microphones)</NavLink>
-                            <NavLink className="nav-link header-link" activeClassName="active" to='/digitalCableSL'> Digital Cable (Speaker Light)</NavLink>
-                        </CardBody>
-                    </Card>
-                </div>
-                <div className="col-12 col-md-8">
+                <SideNav />
+                <div className="col-12 col-md-9">
 
                     <div className="row">
                         {featuredItemsMap}

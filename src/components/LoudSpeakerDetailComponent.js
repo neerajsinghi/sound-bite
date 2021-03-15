@@ -18,12 +18,11 @@ function RenderLoudSpeaker({ loudSpeaker }) {
                 smallImage: {
                     alt: loudSpeaker.name,
 
-                    src: loudSpeaker.image,
-                    width: 400,
-                    height: 360
+                    src: `/assets/images/450${loudSpeaker.image}`,
+                    isFluidWidth: true
                 },
                 largeImage: {
-                    src: loudSpeaker.image,
+                    src: `/assets/images/${loudSpeaker.image}`,
                     width: 1200,
                     height: 1800
                 }
@@ -46,25 +45,24 @@ function RenderDetail({ loudSpeaker }) {
                 <CardTitle style={{ color: '#083daf' }}>Description :</CardTitle>
                 <hr style={{ backgroundColor: '#083daf' }} />
                 <div className="row">
-                    <div className="col-12 col-sm-6" style={{ color: '#083daf', fontFamily: "Oswald,sans-serif !important" }}>
+                    <div className="col-12 col-sm-6" style={{ color: '#083daf', fontSize: 14, fontFamily: "Oswald,sans-serif !important" }}>
 
-                        Normal Diameter :<span style={{ color: '#B23850' }}> 18 inch</span><br></br>
-                        DC Resistance : <span style={{ color: '#B23850' }}>5 ohm</span><br></br>
-                        Continuous Power Handling : <span style={{ color: '#B23850' }}>3600W</span><br></br>
-                        Frequency Range : <span style={{ color: '#B23850' }}>25-2000Hz</span><br></br>
-                        Voice Coil Material : <span style={{ color: '#B23850' }}>Copper i/o</span><br></br>
-                        Winding Height : <span style={{ color: '#B23850' }}>3233</span><br></br>
-                        Basket : <span style={{ color: '#B23850' }}>Aluminium</span><br></br>
+                        Normal Diameter :<span style={{ color: '#B23850' }}> {loudSpeaker.nominal_diameter}</span><br></br>
+                        Rated Impedance : <span style={{ color: '#B23850' }}>{loudSpeaker.rated_impedance}</span><br></br>
+                        Power Handling Capacity : <span style={{ color: '#B23850' }}>{loudSpeaker.power_handing_capacity}</span><br></br>
+                        Frequency Range : <span style={{ color: '#B23850' }}>{loudSpeaker.frequency_range}</span><br></br>
+                        Voice Coil Material : <span style={{ color: '#B23850' }}>{loudSpeaker.voice_coil_material}</span><br></br>
+                        Number of Layer : <span style={{ color: '#B23850' }}>{loudSpeaker.number_of_layer}</span><br></br>
+                        Basket : <span style={{ color: '#B23850' }}>{loudSpeaker.basket}</span><br></br>
 
                     </div>
-                    <div className="col-12 col-sm-6" style={{ color: '#083daf', fontFamily: "Oswald,sans-serif !important" }}>
-                        Nominal Impedance : <span style={{ color: '#B23850' }}>8 ohm</span><br></br>
-                        Nominal Power Handling : <span style={{ color: '#B23850' }}>1800W</span><br></br>
-                        Sensitivity (1W/1m) : <span style={{ color: '#B23850' }}>96dB</span><br></br>
-                        Voice Coil Diameter : <span style={{ color: '#B23850' }}>5in (125.5mm)</span><br></br>
-                        Former Material : <span style={{ color: '#B23850' }}>Glass Fiber</span><br></br>
-                        Magnet : <span style={{ color: '#B23850' }}>Q280xH25mm</span><br></br>
-                        Suspension : <span style={{ color: '#B23850' }}>Double</span>
+                    <div className="col-12 col-sm-6" style={{ color: '#083daf', fontSize: 14, fontFamily: "Oswald,sans-serif !important" }}>
+                        Peak Power Handling Capacity : <span style={{ color: '#B23850' }}>{loudSpeaker.peak_power_handing_capacity}</span><br></br>
+                        Sensitivity (1W/1m) : <span style={{ color: '#B23850' }}>{loudSpeaker.sensitivity}</span><br></br>
+                        Voice Coil Diameter : <span style={{ color: '#B23850' }}>{loudSpeaker.voice_coil_diameter}</span><br></br>
+                        Magnet : <span style={{ color: '#B23850' }}>{loudSpeaker.magnet}</span><br></br>
+                        Kind of Layer : <span style={{ color: '#B23850' }}>{loudSpeaker.kind_of_layer}</span><br></br>
+                        Weight : <span style={{ color: '#B23850' }}>{loudSpeaker.weight}</span>
 
                     </div>
                 </div>
