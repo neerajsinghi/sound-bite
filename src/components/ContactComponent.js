@@ -113,7 +113,7 @@ class Contact extends Component {
                 <div className="row row-content ">
                     <div className="col-12  map">
                         <GoogleMapReact onClick={showInMapClicked}
-                            bootstrapURLKeys={{ key: 'AIzaSyCdyJ_4xgCulRCQ0t_tU24WQg1QQDUgsGo' }}
+                            bootstrapURLKeys={{ key: '' }}
                             defaultCenter={defaultVals.center}
                             defaultZoom={defaultVals.zoom}
                             info
